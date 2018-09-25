@@ -102,6 +102,7 @@ typedef enum pb_FieldType {
 
 
 /* 编译slua，pb库修改 */
+#include "lua.h"
 LUALIB_API int luaopen_pb(lua_State *L)
 
 /* conversions */
