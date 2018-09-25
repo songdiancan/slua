@@ -37,6 +37,7 @@
 #include <string.h>
 
 #include "luasocket.h"
+#include "pb.h"
 
 #define luajit_c
 
