@@ -65,7 +65,7 @@ namespace SLua
             {
                 EditorApplication.update += Update;
                 // use this delegation to ensure dispose luavm at last
-                EditorApplication.playmodeStateChanged += () =>
+                EditorApplication.playModeStateChanged += (PlayModeStateChange state) =>
                 {
 
                     if (isPlaying == true && EditorApplication.isPlaying == false)
@@ -112,9 +112,10 @@ namespace SLua
         }
 
 #if UNITY_2017_2_OR_NEWER
+        //2018.2.8f添加"UnityEngine.ParticleSystemModule"模块
         public static string[] unityModule = new string[] { "UnityEngine","UnityEngine.CoreModule","UnityEngine.UIModule","UnityEngine.TextRenderingModule","UnityEngine.TextRenderingModule",
                 "UnityEngine.UnityWebRequestWWWModule","UnityEngine.Physics2DModule","UnityEngine.AnimationModule","UnityEngine.TextRenderingModule","UnityEngine.IMGUIModule","UnityEngine.UnityWebRequestModule",
-            "UnityEngine.PhysicsModule", "UnityEngine.UI", "UnityEngine.AudioModule" };
+            "UnityEngine.PhysicsModule", "UnityEngine.UI", "UnityEngine.AudioModule", "UnityEngine.ParticleSystemModule"};
 #else
         public static string[] unityModule = null;
 #endif
